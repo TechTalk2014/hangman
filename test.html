@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Backbone Hangman</title>
+    <meta content='A simple application that demonstrates usage of Backbone JS' name='description' />
+    <meta content='Tri Vuong' name='author' />
+    <link charset="utf-8" href="http://fonts.googleapis.com/css?family=Montserrat" media="screen" rel="stylesheet" type="text/css">
+    <link charset="utf-8" href="public/css/hangman.css" media="screen" rel="stylesheet" type="text/css">
+    <script charset="utf-8" src="public/javascript/jquery.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/underscore.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/backbone.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/handlebars.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/i18n.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/models/game.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/views/optionsView.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/views/charactersView.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/views/wordView.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/views/hangmanView.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/views/answerView.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/views/stageView.js" type="text/javascript"></script>
+    <script charset="utf-8" src="public/javascript/hangman.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <a href='https://github.com/trivektor/Backbone-Hangman'>
+      <img id="forkme" src="public/images/forkme.png">
+    </a>
+    <div id='stage'>
+      <div id='west'>
+        <div id='ground'>
+          <div id='string'></div>
+          <div id='hangman'>
+            <img id="head" src="public/images/head.png">
+            <img id="body" src="public/images/body.png">
+            <img id="right_arm" src="public/images/right_arm.png">
+            <img id="left_arm" src="public/images/left_arm.png">
+            <img id="right_leg" src="public/images/right_leg.png">
+            <img id="left_leg" src="public/images/left_leg.png">
+          </div>
+        </div>
+      </div>
+      <div id='east'>
+        <div id='hint'>
+          <span>Hint: It's a country</span>
+        </div>
+        <div id='word'></div>
+        <div id='characters'></div>
+        <div id='answer'></div>
+      </div>
+    </div>
+    <div id='footer'>
+      <div id='options'>
+        <input class='action_button' id='new_game' type='button' value='New game' />
+      </div>
+      <div id='info'>
+        Backbone Hangman
+      </div>
+    </div>
+    <script id="word_template" type="text/x-handlebars">
+      {{#each characters}}
+        {{displayCharacter}}
+      {{/each}}
+    </script>
+    
+    <script id="character_template" type="text/x-handlebars">
+      {{#each characters}}
+        <span class="character" char="{{this}}">{{this}}</span>
+      {{/each}}
+    </script>
+  </body>
+</html>
