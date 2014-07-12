@@ -12,7 +12,7 @@ class Word
   
   class << self
     def get_random
-      content = File.read("towns_lux.txt")
+      content = File.read("countries.txt")
       words = content.split("\n")
       words[rand(words.size)].upcase
     end
