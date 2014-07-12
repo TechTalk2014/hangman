@@ -15,7 +15,7 @@ $(function() {
       this.character_template = Handlebars.compile(character_template)
     },
     render: function() {
-      var chars = this.character_template({characters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z', 'W', '&']})
+      var chars = this.character_template({characters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '&']})
       this.el.html(chars).show();
     },
     charClicked: function(event) {
@@ -27,7 +27,8 @@ $(function() {
       this.model.check();
     },
     disableCharacter: function(response) {      
-      if (response.correct_guess) this.model.get("target").removeClass("character").addClass("disabled");
+      //if (response.correct_guess) this.model.get("target").removeClass("character").addClass("disabled");
+      this.model.get("target").removeClass("character").addClass("disabled");
     }
   })
   
