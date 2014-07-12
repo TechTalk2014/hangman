@@ -3,5 +3,5 @@
 
 require './hangman.rb'
 
-run Sinatra::Application
+#run Sinatra::Application
 Rails.application.load_tasks
